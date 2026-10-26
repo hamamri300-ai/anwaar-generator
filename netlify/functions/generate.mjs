@@ -5,10 +5,10 @@
 const API_BASE = "https://generativelanguage.googleapis.com/v1beta/models/";
 // Main model + a lighter backup if the main one is busy or over its free limit.
 const MODELS = [
-  { name: (process.env.GEMINI_MODEL || "gemini-3.8-flash"), thinking: "LOW" },
+  { name: (process.env.GEMINI_MODEL || "gemini-3.5-flash-lite"), thinking: "LOW" },
   { name: "gemini-3.5-flash-lite", thinking: "MINIMAL" },
 ];
-const TIMEOUT_MS = 45000; // Netlify allows 60 s for a normal function
+const TIMEOUT_MS = 12000; // Netlify allows 60 s for a normal function
 
 const MSG = {
   noKey: "المفتاح غير مضاف في إعدادات Netlify",
